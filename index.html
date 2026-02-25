@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture AI</title>
+    <!-- Modern Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    
+    <!-- MediaPipe dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <main class="container">
+        <header>
+            <h1>Hand AI Vision</h1>
+            <p>Real-time Hand Gesture Recognition Engine</p>
+        </header>
+
+        <section class="app-layout">
+            <div class="video-container">
+                <div class="glass-card camera-card">
+                    <video id="webcam" autoplay playsinline></video>
+                    <canvas id="output_canvas"></canvas>
+                    <div class="status-overlay" id="connection-status">
+                        Connecting to API...
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-card result-panel">
+                <h2>Prediction</h2>
+                <div class="prediction-box">
+                    <span id="gesture-text">Waiting...</span>
+                </div>
+                <div class="instructions">
+                    <h3>Try these gestures:</h3>
+                    <ul>
+                        <li><span class="icon">👍</span> Thumbs Up</li>
+                        <li><span class="icon">✌️</span> Peace</li>
+                        <li><span class="icon">✋</span> Stop</li>
+                        <li><span class="icon">✊</span> Fist</li>
+                    </ul>
+                </div>
+                <button id="start-btn" class="glow-btn">Start Camera</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
